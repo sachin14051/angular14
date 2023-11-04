@@ -1,0 +1,35 @@
+<h3 class="text-capitalize">recent orders</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">customers</th>
+      <th scope="col">products</th>
+      <th scope="col">delivery date</th>
+      <th scope="col">status</th>
+      <th scope="col">tracking no#</th>
+      <th scope="col">shipping</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let orders of orderedArray; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{orders.name}}</td>
+      <td>{{orders.product}}</td>
+      <td>{{orders.delivery_date | date:' d MMM, y'}}</td>
+      <td ><a  class="badge badge-success"
+        >{{orders.status}}</a></td>
+      <td>#{{orders.tracking_no}}</td>
+      <td>{{orders.shipping ? 'Yes' : 'No'}}</td>
+      <td (click)="onOrderedClick(orders.id)" >x</td>
+     
+    </tr>
+
+
+  </tbody>
+</table>
+
+
+

@@ -1,0 +1,18 @@
+
+<h2 class="text-capitalize"> new user registrations</h2> 
+<div class="row" *ngFor="let user of usersArray">
+    <div class="col-md-2">
+     <img [src]="user.picture" class="rounded-circle" alt="userImg" title="userName"> 
+    </div>
+    <div class="col-md-4">
+      <h4 class="userName"> {{user.name}}</h4>
+      <p class="userCountry"> {{user.country}}</p>
+    </div>
+    <div class="col-md-4">
+     <progress [value]="user.progress" max="100"></progress>{{user.progress}}%
+  
+    </div>
+    <div class="col-md-2">
+      <button mat-raised-button color="primary">more</button>
+    </div>
+</div>
